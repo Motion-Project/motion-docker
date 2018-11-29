@@ -1,6 +1,10 @@
 # motion-docker
 
-If you use /dev/video or database features of Motion, this container won't work for you at this stage.
+This container is built automatically whenever code is pushed to master at https://github.com/Motion-Project/motion .
+
+Caveats;
+> If you use /dev/video or database features of Motion, this container won't work for you at this stage.  
+> Bleeding edge code, if you want something more stable grab a prebuilt release from [here](https://github.com/Motion-Project/motion/releases).
 
 Run via something like this;
 
