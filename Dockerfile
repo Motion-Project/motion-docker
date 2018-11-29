@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y --no-i
     autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev \
     git libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev \
     libwebp-dev gettext libmicrohttpd-dev ca-certificates imagemagick curl wget tzdata \
-    libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev ffmpeg && \
+    libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev ffmpeg x264 && \
     apt-get --quiet autoremove --yes && \
     apt-get --quiet --yes clean && \
     rm -rf /var/lib/apt/lists/*
