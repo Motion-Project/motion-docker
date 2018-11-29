@@ -5,7 +5,7 @@ LABEL maintainer="TBD"
 ARG BUILD_DATE
 ARG VCS_REF
 LABEL org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.docker.dockerfile="extra/Dockerfile" \
+    org.label-schema.docker.dockerfile="Dockerfile" \
     org.label-schema.license="GPLv3" \
     org.label-schema.name="motion" \
     org.label-schema.url="https://motion-project.github.io/" \
