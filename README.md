@@ -28,10 +28,10 @@ docker run -d --name=motion \
 ## How to Update
 
 ```
-docker stop motion-project
-docker rm motion-project
+docker stop motion
+docker rm motion
 docker pull motionproject/motion:latest
-rerun above run command
+- rerun above run command
 ```
 
 
