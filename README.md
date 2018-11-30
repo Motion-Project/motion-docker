@@ -4,7 +4,7 @@ This container is built automatically whenever code is pushed to master at https
 
 Caveats;
 - If you use /dev/video, locally attached cameras or the database features of Motion, this container won't work for you at this stage.  
-- Bleeding edge code, if you want something more stable grab a prebuilt release from [here](https://github.com/Motion-Project/motion/releases).
+- This is built directly from git master, if you want something more stable grab a prebuilt release from [here](https://github.com/Motion-Project/motion/releases) and install manually.
 
 Run via something like this;
 
@@ -24,9 +24,14 @@ docker run -d --name=motion-project \
     motionproject/motion:latest
 ```
 
-Things to change ;
+Things you will need to change ;
 - name=a label for the container, should be motion or motion-project (but can be anything)
 - ports = each -p line denotes 1 camera and its stream port
 - TZ = the timezone the container will be running
 - volumes = /dockerserver/path/to/config
           = /dockerserver/path/to/storage
+          
+## Release Notes
+- 30/11/18 Cosmetic changes and added x264 package
+- 29/11/18 Initial build of Docker container 
+- 29/10/18 Motion 4.2 released
