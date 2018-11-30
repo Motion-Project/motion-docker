@@ -11,7 +11,7 @@ This container is built automatically whenever code is pushed to master at https
 something like this;
 
 ```
-docker run -d --name=motion-project \
+docker run -d --name=motion \
     -p 7999:7999 \
     -p 8081:8081 \
     -p 8082:8082 \
