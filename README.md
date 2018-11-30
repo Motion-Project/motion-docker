@@ -6,7 +6,9 @@ This container is built automatically whenever code is pushed to master at https
 - If you use /dev/video, locally attached cameras or the database features of Motion, this container won't work for you at this stage.  
 - This is built directly from git master, if you want something more stable grab a prebuilt release from [here](https://github.com/Motion-Project/motion/releases) and install manually.
 
-Run via something like this;
+## How to run
+
+something like this;
 
 ```
 docker run -d --name=motion-project \
@@ -23,6 +25,15 @@ docker run -d --name=motion-project \
     --restart=always \
     motionproject/motion:latest
 ```
+## How to Update
+
+```
+docker stop motion-project
+docker rm motion-project
+docker pull motionproject/motion:latest
+rerun above run command
+```
+
 
 ## Things you may need to change
 - name = a label for the container, should be motion or motion-project (but can be anything)
