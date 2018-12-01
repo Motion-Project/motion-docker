@@ -13,16 +13,18 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-type="Git" \
     org.label-schema.vcs-url="https://github.com/Motion-Project/motion.git"
 
-#Install base packages
-RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y --option Dpkg::Options::="--force-confnew" --no-install-recommends \
-    install autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev \
+# Setup Timezone packages and avoid all interaction. This will be overwritten by the user when selecting TZ in the run command
+RUN export DEBIAN_FRONTEND=noninteractive; \
+    export DEBCONF_NONINTERACTIVE_SEEN=true; \
+    apt-get update -qqy && apt-get install -qqy --option Dpkg::Options::="--force-confnew" --no-install-recommends \
+    autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev tzdata \
     git libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev \
     libwebp-dev gettext libmicrohttpd-dev ca-certificates imagemagick curl wget \
     libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev ffmpeg x264 && \
     apt-get --quiet autoremove --yes && \
     apt-get --quiet --yes clean && \
     rm -rf /var/lib/apt/lists/*
-    
+
 RUN git clone https://github.com/Motion-Project/motion.git  && \
    cd motion  && \
    autoreconf -fiv && \
@@ -38,7 +40,7 @@ VOLUME /usr/local/etc/motion
 # R/W needed for motion to update Video & images
 VOLUME /var/lib/motion
 
-CMD test -e /usr/local/etc/motion/motion.conf || \    
-    cp /usr/local/etc/motion/motion-dist.conf /usr/local/etc/motion/motion.conf 
+CMD test -e /usr/local/etc/motion/motion.conf || \
+    cp /usr/local/etc/motion/motion-dist.conf /usr/local/etc/motion/motion.conf
 
 CMD [ "motion", "-n" ]
