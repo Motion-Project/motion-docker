@@ -14,10 +14,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-url="https://github.com/Motion-Project/motion.git"
 
 #Install base packages
-RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y --option Dpkg::Options::="--force-confnew" --no-install-recommends install \
-    autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev \
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y --option Dpkg::Options::="--force-confnew" --no-install-recommends \
+    install autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev \
     git libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev \
-    libwebp-dev gettext libmicrohttpd-dev ca-certificates imagemagick curl wget tzdata \
+    libwebp-dev gettext libmicrohttpd-dev ca-certificates imagemagick curl wget \
     libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev ffmpeg x264 && \
     apt-get --quiet autoremove --yes && \
     apt-get --quiet --yes clean && \
