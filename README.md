@@ -1,6 +1,6 @@
 # motion-docker
 
-This container is built automatically whenever code is pushed to master at https://github.com/Motion-Project/motion .
+This container is built automatically whenever code is pushed to master at https://github.com/Motion-Project/motion-docker.
 
 ## Caveats
 - If you use /dev/video, locally attached cameras or the database features of Motion, this container won't work for you at this stage.  
@@ -31,7 +31,7 @@ docker run -d --name=motion \
 docker stop motion
 docker rm motion
 docker pull motionproject/motion:latest
-- rerun above run command
+- rerun above 'run' command
 ```
 
 
