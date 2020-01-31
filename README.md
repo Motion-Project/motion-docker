@@ -43,6 +43,7 @@ docker pull motionproject/motion:latest
           = /dockerserver/path/to/storage
           
 ## Release Notes
+
 - 29/01/20 Triggered new build to bump to 4.3.0
 - 21/01/19 Triggered new build to capture passthrough fixes from git master
 - 30/11/18 Bumped to Ubuntu 18.04
