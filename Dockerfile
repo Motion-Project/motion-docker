@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     apt-get update -qqy && apt-get install -qqy --option Dpkg::Options::="--force-confnew" --no-install-recommends \
     autoconf automake build-essential pkgconf libtool libzip-dev libjpeg-dev tzdata \
     git libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev \
-    libwebp-dev gettext libmicrohttpd-dev ca-certificates imagemagick curl wget \
+    libwebp-dev gettext autopoint libmicrohttpd-dev ca-certificates imagemagick curl wget \
     libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev ffmpeg x264 && \
     apt-get --quiet autoremove --yes && \
     apt-get --quiet --yes clean && \

@@ -1,6 +1,6 @@
 # motion-docker
 
-This container is built automatically whenever code is pushed to master at https://github.com/Motion-Project/motion .
+This container is built automatically whenever code is pushed to master at https://github.com/Motion-Project/motion-docker.
 
 ## Caveats
 - If you use /dev/video, locally attached cameras or the database features of Motion, this container won't work for you at this stage.  
@@ -31,7 +31,7 @@ docker run -d --name=motion \
 docker stop motion
 docker rm motion
 docker pull motionproject/motion:latest
-- rerun above run command
+- rerun above 'run' command
 ```
 
 
@@ -43,6 +43,9 @@ docker pull motionproject/motion:latest
           = /dockerserver/path/to/storage
           
 ## Release Notes
+
+- 29/01/20 Triggered new build to bump to 4.3.0
+- 21/01/19 Triggered new build to capture passthrough fixes from git master
 - 30/11/18 Bumped to Ubuntu 18.04
 - 30/11/18 Cosmetic changes and added x264 package
 - 29/11/18 Initial build of Docker container 
